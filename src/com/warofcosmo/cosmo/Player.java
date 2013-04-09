@@ -3,6 +3,7 @@ package com.warofcosmo.cosmo;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 
 public class Player extends AbstractEntity{
@@ -47,9 +48,12 @@ public class Player extends AbstractEntity{
             }
             if(key == KeyEvent.VK_UP){
                 _dy = -_speed;
+                
+                 _gfx = _shipimg.get(1).getImage();
             }
             if(key == KeyEvent.VK_DOWN){
                 _dy = _speed;
+                 _gfx = _shipimg.get(2).getImage();
             }
             if(key == KeyEvent.VK_SPACE){
       
@@ -69,9 +73,11 @@ public class Player extends AbstractEntity{
             }
             if(key == KeyEvent.VK_UP){
                 _dy = 0;
+                 _gfx = _shipimg.get(0).getImage();
             }
             if(key == KeyEvent.VK_DOWN){
                 _dy = 0;
+                 _gfx = _shipimg.get(0).getImage();
             }
               
 	}
