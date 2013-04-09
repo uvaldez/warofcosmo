@@ -91,6 +91,10 @@ public abstract class AbstractEntity implements ActionListener,IEntity{
 	public int getDy() {
 		return _dy;
 	}
+		
+	public int getSpeed() {
+		return _speed;
+	}
 	
         @Override
 	public void setDx(int dx) {

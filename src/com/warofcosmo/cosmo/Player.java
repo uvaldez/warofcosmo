@@ -17,16 +17,16 @@ public class Player extends AbstractEntity implements IPlayer{
 		_y=500;
 		
 		AbstractKeyEvent kright = new KeyRight(this);
-		//AbstractKeyEvent kleft = new KeyLeft(this);
-		//AbstractKeyEvent kup = new KeyUp(this);
-		//AbstractKeyEvent kdown = new KeyDown(this);
+		AbstractKeyEvent kleft = new KeyLeft(this);
+		AbstractKeyEvent kup = new KeyUp(this);
+		AbstractKeyEvent kdown = new KeyDown(this);
                   //AbstractKeyEvent kspace = new KeySpace(this);
 					
 				  
 		addKeyEvent(kright);
-		//addKeyEvent(kleft);
-		//addKeyEvent(kup);
-		//addKeyEvent(kdown);
+		addKeyEvent(kleft);
+		addKeyEvent(kup);
+		addKeyEvent(kdown);
 		//addKeyEvent(kspace);
 
 		
@@ -78,53 +78,6 @@ public class Player extends AbstractEntity implements IPlayer{
 		}
 	}
 	
-	/*
-	public void keyPressed(KeyEvent e) {
-            int key = e.getKeyCode();
-           
-            if(key == KeyEvent.VK_LEFT){
-                _dx = -_speed;
-           
-            }
-            if(key == KeyEvent.VK_RIGHT){
-                _dx = _speed;
-            }
-            if(key == KeyEvent.VK_UP){
-                _dy = -_speed;
-                
-                 _gfx = _shipimg.get(1).getImage();
-            }
-            if(key == KeyEvent.VK_DOWN){
-                _dy = _speed;
-                 _gfx = _shipimg.get(2).getImage();
-            }
-            if(key == KeyEvent.VK_SPACE){
-      
-            }
-		
-}
-
-	
-	public void keyReleased(KeyEvent e) {
-		int key = e.getKeyCode();
-	    if(key == KeyEvent.VK_LEFT){
-                _dx = 0;
-           
-            }
-            if(key == KeyEvent.VK_RIGHT){
-                _dx = 0;
-            }
-            if(key == KeyEvent.VK_UP){
-                _dy = 0;
-                 _gfx = _shipimg.get(0).getImage();
-            }
-            if(key == KeyEvent.VK_DOWN){
-                _dy = 0;
-                 _gfx = _shipimg.get(0).getImage();
-            }
-              
-	}
-	*/
 
 
 }
