@@ -34,6 +34,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
                 }else{
                 l=new LevelEntity("mountains1.png","front-line.wav",1,2000);    
                 }
+                
                 bgimg=l.getBG();
                 as=l.getBGM();
                 
