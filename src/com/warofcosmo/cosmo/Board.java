@@ -22,13 +22,18 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         private Player p;
         private LevelEntity l;
         protected AudioStream as;
+        private int level;
 	
 	// contructor method
 	public Board(){
-		//ImageIcon i = new ImageIcon(getClass().getResource("/bg1.png"));
-		//bgimg = i.getImage();
-                l=new LevelEntity("bg1.png","/resources/project4.wav",1,2000);
-                
+            
+                level=1;
+            
+                if(level==1){
+                l=new LevelEntity("bg2.png","project4.wav",1,2000);
+                }else{
+                l=new LevelEntity("mountains1.png","front-line.wav",1,2000);    
+                }
                 bgimg=l.getBG();
                 as=l.getBGM();
                 

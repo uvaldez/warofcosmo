@@ -37,7 +37,7 @@ public class LevelEntity {
     private void LoadBGM(String ibgm){
         try{
             String path = new java.io.File(".").getCanonicalPath();
-            InputStream in = new FileInputStream(path+ibgm);
+            InputStream in = new FileInputStream(path+"/resources/"+ibgm);
             as = new AudioStream(in);
         }
         catch(Exception e){

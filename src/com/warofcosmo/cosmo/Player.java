@@ -14,7 +14,7 @@ public class Player extends AbstractEntity implements IPlayer{
 		super(brd);
 		
 		_x=100;
-		_y=500;
+		_y=400;
 		
 		AbstractKeyEvent kright = new KeyRight(this);
 		AbstractKeyEvent kleft = new KeyLeft(this);
