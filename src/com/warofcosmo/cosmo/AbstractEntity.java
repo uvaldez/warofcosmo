@@ -18,6 +18,8 @@ public abstract class AbstractEntity implements ActionListener,IEntity{
 	protected int _dy;
 	protected int _dx;
 	protected ArrayList<ImageIcon> _shipimg;
+        protected ArrayList<ImageIcon> _shipimgType;
+        private int playerType;
 	private int curhealth;
 	private int maxhealth;
         protected ArrayList<ImageIcon> _staticimg;
@@ -25,24 +27,31 @@ public abstract class AbstractEntity implements ActionListener,IEntity{
 	public AbstractEntity(Board brd){
 		
 		_shipimg = new ArrayList<ImageIcon>();
+                _shipimgType = new ArrayList<ImageIcon>();
 		
-                ImageIcon i = new ImageIcon(getClass().getResource("/s0.png"));
-                _gfx = i.getImage();
+                playerType=2;
+                ImageIcon i = new ImageIcon(getClass().getResource("/s0" + playerType + ".png"));
+                _gfx = i.getImage();                                
 
-
-		fillCycleImages();
+		fillCycleImages(playerType);
+                imagesTypes(playerType);
 		_board = brd;
 	}
 	
-	protected void fillCycleImages(){
+	protected void fillCycleImages(int playerType){
 		//for(int i = 0; i < 3; i++){
-			_shipimg.add(new ImageIcon(getClass().getResource("/s0.png")));
-                        _shipimg.add(new ImageIcon(getClass().getResource("/su.png")));
-                        _shipimg.add(new ImageIcon(getClass().getResource("/sd.png")));
+			_shipimg.add(new ImageIcon(getClass().getResource("/s0"+playerType+".png")));
+                        _shipimg.add(new ImageIcon(getClass().getResource("/s0"+playerType+"u.png")));
+                        _shipimg.add(new ImageIcon(getClass().getResource("/s0"+playerType+"d.png")));
 		//}
 	}
         
-   
+        protected void imagesTypes(int playerType){
+			
+                        _shipimgType.add(new ImageIcon(getClass().getResource("/s0"+playerType+".png")));
+                        _shipimgType.add(new ImageIcon(getClass().getResource("/s0"+playerType+"u.png")));
+                        _shipimgType.add(new ImageIcon(getClass().getResource("/s0"+playerType+"d.png")));                        
+        }   
 	
 	@Override
 	public int getX() {
